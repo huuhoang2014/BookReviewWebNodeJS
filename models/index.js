@@ -53,14 +53,14 @@ db.category.belongsToMany(db.book, {
     otherKey: "bookId"
 });
 
-//review Relationship table
+//reviews Relationship table
 db.book.belongsToMany(db.user, {
-    through: "review",
+    through: "reviews",
     foreignKey: "bookId",
     otherKey: "userId"
   });
   db.user.belongsToMany(db.book, {
-    through: "review",
+    through: "reviews",
     foreignKey: "userId",
     otherKey: "bookId"
   });
