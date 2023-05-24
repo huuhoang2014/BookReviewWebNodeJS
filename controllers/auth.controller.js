@@ -21,10 +21,17 @@ exports.signup = (req,res) => {
     });
 };
 
-exports.signin = (req, res) => {
+export.updateAccount = (req, res) => {
     User.findOne({
         where: {
             username: req.body.username
+        }
+}
+
+exports.signin = (req, res) => {
+    User.findOne({
+        where: {
+            id: req.body.id
         }
     }).then(user => {
         if(!user){
